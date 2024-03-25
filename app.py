@@ -13,10 +13,11 @@ def main():
     """
     This function is the main entry point of the application. It sets up the Groq client, the Streamlit interface, and handles the chat interaction.
     """
-    
-    # Get Groq API key
-    groq_api_key = os.environ['GROQ_API_KEY']
 
+    # Get Groq API key
+    #groq_api_key = os.environ['GROQ_API_KEY']
+    groq_api_key = os.environ.get('GROQ_API_KEY', 'default_value_if_not_set')
+    
     # Display the Groq logo
     spacer, col = st.columns([5, 1])  
     with col:  
